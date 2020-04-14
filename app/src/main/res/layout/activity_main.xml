@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SnapIT"
+        android:textSize="50sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        />
+
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="username"
+        android:textSize="30sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="140dp"
+
+        />
+
+    <EditText
+        android:id="@+id/pwd"
+        android:layout_below="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="password"
+        android:inputType="textPassword"
+        android:textSize="30sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        />
+
+    <CheckBox
+        android:id="@+id/showpwd"
+        android:layout_below="@+id/pwd"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show password"
+
+        />
+
+    <Button
+        android:id="@+id/register_btn"
+        android:layout_below="@+id/showpwd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        android:text="Register"
+        android:onClick="saveRegister"
+        />
+
+    <TextView
+        android:id="@+id/haveRegistered"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registered already?"
+        android:textSize="15sp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/register_btn"
+        />
+
+    <Button
+        android:id="@+id/login_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/haveRegistered"
+        android:layout_centerHorizontal="true"
+        android:text="Login"
+        android:textSize="20dp"
+        android:onClick="gotoLogin"
+        />
+
+
+</RelativeLayout>
