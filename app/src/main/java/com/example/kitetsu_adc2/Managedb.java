@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteStatement;
 
 public class Managedb extends SQLiteOpenHelper {
     private static final String dbname= "user.db";
@@ -37,6 +38,20 @@ public class Managedb extends SQLiteOpenHelper {
             return "Successfully Registered";
 
 
+    }
+
+    public boolean validatelogin(String username, String password){
+        String sql =" Select count(*) from tbl_user  where name='"+username+"' and pwd ='"+password+"'";
+        SQLiteStatement statement = getReadableDatabase().compileStatement(sql);
+        long l = statement.simpleQueryForLong();
+        statement.close();
+
+        if(l == 1){
+            return true;
+        }
+        else{
+            return  false;
+        }
     }
 
 }
