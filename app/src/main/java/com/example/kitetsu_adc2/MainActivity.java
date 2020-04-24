@@ -15,27 +15,29 @@ import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
-    EditText pwd,name;
+    EditText regpwd,regusername, regfirstname, reglastname;
     CheckBox showpwd;
     private Button registerbtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        name = findViewById(R.id.name) ;
-        pwd = findViewById(R.id.pwd);
+        regusername = findViewById(R.id.regusername) ;
+        regpwd = findViewById(R.id.regpwd);
         showpwd = findViewById(R.id.showpwd);
-        registerbtn = findViewById(R.id.register_btn);
+        registerbtn = findViewById(R.id.regbtn);
+        regfirstname= findViewById(R.id.regfirstname);
+        reglastname = findViewById(R.id.reglastname);
 
         //for showing and hiding password
         showpwd.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean b) {
                 if (b){
-                   pwd.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                   regpwd.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
                 }
                 else{
-                    pwd.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    regpwd.setTransformationMethod(PasswordTransformationMethod.getInstance());
                 }
             }
         });
@@ -55,13 +57,13 @@ public class MainActivity extends AppCompatActivity {
         //Managedb is database and ob is its object
         Managedb ob = new Managedb(this);
 
-        String reg=ob.saveRegister(name.getText().toString(),pwd.getText().toString());
+        String reg=ob.saveRegister(regusername.getText().toString(),regpwd.getText().toString());
 
         Toast.makeText(this,reg, Toast.LENGTH_SHORT).show();
 
         //for reseting the field
-        name.setText("");
-        pwd.setText("");
+        regusername.setText("");
+        regpwd.setText("");
     }
 
     public void gotoLogin(View view){

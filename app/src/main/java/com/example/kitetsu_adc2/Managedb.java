@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteStatement;
 public class Managedb extends SQLiteOpenHelper {
     private static final String dbname= "user.db";
     public Managedb( Context context ) {
+
         super(context,dbname, null,1);
     }
 

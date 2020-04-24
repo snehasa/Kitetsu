@@ -4,94 +4,222 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:padding="75dp"
-        >
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SnapIT"
-        android:textSize="50sp"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
+    tools:context=".MainActivity"
+    tools:ignore="VectorDrawableCompat"
+    android:orientation="vertical">
 
+    <ImageView
+        android:id="@+id/bgHeader"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:background="@drawable/header_login"
         />
 
-
-    <EditText
-        android:id="@+id/name"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Username"
-        android:textSize="24sp"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="40dp"
-
-        />
-
-    <EditText
-        android:id="@+id/pwd"
-        android:layout_below="@+id/name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:textSize="24sp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
-
-        />
-
-    <CheckBox
-        android:id="@+id/showpwd"
-        android:layout_below="@+id/pwd"
-        android:layout_centerHorizontal="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Show password"
-
-        />
-
-    <Button
-        android:id="@+id/register_btn"
-        android:layout_below="@+id/showpwd"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_centerHorizontal="true"
-        android:textSize="20sp"
-        android:text="Register"
-        android:layout_marginBottom="20dp"
-
+        android:text="Welcome to SnapIT"
+        android:textColor="#ffffff"
+        android:textSize="17sp"
+        android:elevation="5dp"
         />
 
     <TextView
-        android:id="@+id/haveRegistered"
+        android:layout_below="@+id/title"
+        android:layout_alignLeft="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Registered already?"
-        android:textSize="15sp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/register_btn"
+        android:text="Register"
+        android:textColor="#ffffff"
+        android:elevation="5dp"
+        android:textSize="30sp"
+        android:textStyle="bold"
         />
 
-    <Button
-        android:id="@+id/login_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/haveRegistered"
-        android:layout_centerHorizontal="true"
-        android:text="Login"
-        android:textSize="20dp"
-        android:onClick="gotoLogin"
+    <ImageView
+        android:id="@+id/circle1"
+        android:layout_width="134dp"
+        android:layout_height="134dp"
+        android:layout_below="@+id/bgHeader"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/circletransparent"
+        android:layout_marginTop="-80dp"
+        android:layout_marginRight="-100dp"
         />
-    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/circle2"
+        android:layout_width="134dp"
+        android:layout_height="134dp"
+        android:background="@drawable/circletransparent"
+
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="-100dp"
+        android:layout_marginBottom="50dp"
+        />
+
+    <ImageView
+        android:id="@+id/circle3"
+        android:layout_width="182dp"
+        android:layout_height="182dp"
+        android:background="@drawable/circle"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="-80dp"
+        android:layout_marginBottom="-30dp"
+        />
+
+    <ImageView
+        android:id="@+id/circle4"
+        android:layout_width="134dp"
+        android:layout_height="134dp"
+        android:background="@drawable/circletransparent"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/circle3"
+        android:layout_marginRight="-50dp"
+        android:layout_marginBottom="-50dp"/>
+
+
+    <ScrollView
+        android:id="@+id/sv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/bgHeader">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:elevation="4dp"
+
+
+            >
+
+            <LinearLayout
+                android:id="@+id/cv"
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="50dp">
+
+
+                <EditText
+                    android:id="@+id/regusername"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:inputType="text"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="Username"
+                    android:textColorHint="@color/colorBlue"
+                    android:padding="10px"/>
+                <EditText
+                    android:id="@+id/regfirstname"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:inputType="text"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="First Name"
+                    android:textColorHint="@color/colorBlue"
+                    android:padding="10px"/>
+
+                <EditText
+                    android:id="@+id/reglastname"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:inputType="text"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="Last Name"
+                    android:textColorHint="@color/colorBlue"
+                    android:padding="10px"/>
+
+                <EditText
+                    android:id="@+id/regpwd"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:inputType="text"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="Password"
+                    android:textColorHint="@color/colorBlue"
+                    android:padding="10px"/>
+                <CheckBox
+                    android:id="@+id/showpwd"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10sp"
+                    android:text="Show password"
+
+                    />
+
+
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/lg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cv"
+                android:layout_alignLeft="@+id/cv"
+                android:layout_alignRight="@id/cv"
+                android:layout_marginTop="-50dp"
+                android:elevation="10dp">
+
+
+                <Button
+                    android:id="@+id/regbtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Register"
+                    android:textAllCaps="false"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/bg_ui"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="24sp"
+                    />
+
+            </RelativeLayout>
+
+
+
+            <Button
+                android:id="@+id/slide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lg"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:elevation="5dp"
+                android:text="Slide left to login"
+                android:onClick="gotoLogin"
+                android:textSize="14sp" />
+
+
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+
+
+
 
 </RelativeLayout>
+
+
+
+
+
+
+
+

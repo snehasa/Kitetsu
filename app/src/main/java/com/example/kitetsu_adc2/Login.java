@@ -7,12 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class Login extends AppCompatActivity {
     EditText loginname, loginpwd;
     Button loginbtn;
     Managedb databaseHelper;
+    ImageButton gotoregister;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +22,7 @@ public class Login extends AppCompatActivity {
         loginname = findViewById(R.id.loginname) ;
         loginpwd = findViewById(R.id.loginpwd);
         loginbtn = findViewById(R.id.loginbtn);
+        gotoregister = findViewById(R.id.gotoregister);
         //databasehelper is an object for database
         databaseHelper = new Managedb(this);
 
@@ -40,6 +43,14 @@ public class Login extends AppCompatActivity {
                     //if user doesnot exist toast is shown
                     Toast.makeText(Login.this, "Login unsuccesfull", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+        gotoregister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Login.this, MainActivity.class));
+
             }
         });
 
